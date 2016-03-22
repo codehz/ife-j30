@@ -1,0 +1,79 @@
+html, body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.box {
+  margin: 20px 10px;
+  position: relative;
+}
+.box::after {
+}
+.box label {
+  display: inline-block;
+  width: 100px;
+  text-align: right;
+  margin-right: 20px;
+  padding-bottom: 30px;
+  box-sizing: border-box;
+}
+.box span {
+}
+.box input {
+  width: 300px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  outline: none;
+  border: 2px solid #ccc;
+  box-sizing: border-box;
+}
+.box div {
+  position: absolute;
+}
+.box div::after {
+  width: 300px;
+}
+.box input+div::after {
+  position: absolute;
+  bottom: 0;
+  left: 120px;
+  content: attr(data-validation);
+  font-size: 14px;
+}
+.box input:focus+div::after {
+  position: absolute;
+  bottom: 0;
+  left: 120px;
+  content: attr(data-info);
+  font-size: 14px;
+}
+.box.verified input {
+  border: 2px solid #3c3;
+  box-shadow: 0 0 2px #3c3;
+}
+.box.verified input+div::after  {
+  color: #3c3;
+}
+.box input:hover {
+  border: 2px solid #caf;
+  box-shadow: 0 0 2px #caf;
+}
+.box input:active, .box input:focus {
+  border: 2px solid #0af;
+  box-shadow: 0 0 2px #0af;
+}
+.box.error input {
+  border: 2px solid #f00;
+  box-shadow: 0 0 2px #f00;
+}
+.box.error input+div::after {
+  color: #f00;
+}
+input[type="button"] {
+  padding: 5px 20px;
+  margin-left: 130px;
+  width: 300px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+}

@@ -7,18 +7,22 @@ head
 body
   .box
     label(for="name") 名称
-    input#name(type="text", name="name")
+    input#name(type="text", name="name", onblur="check('name')")
+    div(data-info="必填，长度为4-16个字符")
   .box
     label(for="password") 密码
-    input#password(type="password", name="password")
+    input#password(type="password", name="password", onblur="check('password')")
+    div(data-info="必填，长度为4-16个字符")
   .box
     label(for="password-re") 密码确认
-    input#password-re(type="password", name="password-re")
+    input#password-re(type="password", name="password-re", onblur="check('password-re')")
+    div(data-info="必填，必须和前面一致")
   .box
     label(for="email") 邮箱
-    input#email(type="email", name="email")
+    input#email(type="email", name="email", onblur="check('email')")
+    div(data-info="必填，需使用正确的电子邮件地址形式")
   .box
     label(for="phone") 手机
-    input#phone(type="phone", name="phone")
-  input(type="button", name="submit", value="提交", onclick="submit")
-  
+    input#phone(type="phone", name="phone", onblur="check('phone')")
+    div(data-info="必填，需使用正确的手机号码")
+  input(type="button", name="submit", value="提交", onclick="submit()")
