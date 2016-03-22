@@ -49,8 +49,9 @@ function submit() {
   for (let el in Validators) {
     let ret = Validators[el]();
     if (!ret.status) {
-      alert(ret.msg);
+      alert('提交失败');
       return;
     }
   }
+  alert('提交成功');
 }
